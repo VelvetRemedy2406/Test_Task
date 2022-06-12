@@ -1,0 +1,31 @@
+# Hello From gmi-html!
+
+This is a paragraph. Just in case you wanted it! It's not the most amazing or superb collection of words, but it'll do for this example! Honestly, it's fine.
+
+Hey, you know what? I'll throw in a second line right here just for you!
+
+##    Secondary Headers are Cool
+
+I mean, aren't they? No? Huh...
+
+###                  Thirdary Headers, Too!
+
+If thirdary is a real word, I haven't come across it that often.
+
+*                       Here's
+* A
+* List
+* Of
+*                     Elements!
+
+```
+Preformatted text
+Is amazing, isn't it?
+Yes, I think it is
+```
+
+=> https://yandex.ru A link to a Yandex!
+=>https://yandex.ru          A link to a Yandex!
+=>             https://yandex.ru                           A link to a Yandex!
+
+> This is a blockquote and I am on drugs. -Einstein

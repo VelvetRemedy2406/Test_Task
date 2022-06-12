@@ -1,9 +1,10 @@
 #include <iostream>
 #include <filesystem>
 #include "InputParser.h"
-
+#include "ConvertorGmi.h"
 void copy_dirs(const std::filesystem::path &from, std::filesystem::path to) {
     int curr_depth = std::filesystem::recursive_directory_iterator(from).depth() - 1;
+    GmiConverter convert{};
     for (auto dirEntry = std::filesystem::recursive_directory_iterator(from);
          dirEntry != std::filesystem::recursive_directory_iterator();
          dirEntry++
@@ -27,6 +28,9 @@ void copy_dirs(const std::filesystem::path &from, std::filesystem::path to) {
             std::filesystem::create_directories(to.parent_path());
             std::filesystem::copy_file(dirEntry->path(),to);//если итератор находится на файле,скопируем файл,
             // при этом если дериктории не существовало(в output) создадим её.
+        } else
+        {
+            convert.ConvertFile(dirEntry->path(),to.replace_extension(".html"));
         }
     }
 }
@@ -39,7 +43,7 @@ int main(int arg, char **argv) {
         copy_dirs(input_path, output_path);
 
     } else {
-        std::cerr << "Input directory does not exists or output directory was not set." <<
+        std::cerr << "Input directory does not exists or output directory was not set." << //не задали нужные аргументы или папка из которой надо генерировать не найдена
                   std::endl;
     }
 
